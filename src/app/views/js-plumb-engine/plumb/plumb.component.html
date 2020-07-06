@@ -1,0 +1,131 @@
+<nz-row nzGutter="24" class="ngx-flowchart">
+  <nz-col nzOffset="1" nzSpan="22">
+    <nz-row nzGutter="24" id="ngx-flowchart-uuid">
+      <nz-col nzSpan="4" class="flowchart-sider">
+        <nz-card style="height: 600px">
+          <nz-row class="flowchart-sider-header">规则列表</nz-row>
+          <nz-row>
+            <nz-collapse>
+              <nz-collapse-panel [nzHeader]="'输入'" cdkDropList #todoList="cdkDropList"
+                [cdkDropListConnectedTo]="[doneList]" [cdkDropListSortingDisabled]="true">
+                <div id="motion_{{sideIndex}}" *ngFor="let item of motionList;index as sideIndex"
+                  class="palette_node ui-draggable" style="height: 40px;" [ngStyle]="{'background-color':item.color}"
+                  [cdkDragData]="item" (cdkDragStarted)="CdkDragStarts($event,sideIndex)"
+                  (cdkDragEnded)="cdkDragEnds($event)" cdkDrag>
+                  <div class="palette_label" dir="">{{item.name}}</div>
+                  <div class="palette_icon_container">
+                    <div class="palette_icon">
+                      <i nz-icon nzType="{{item.iconType}}" style="margin-top: 10px;font-size: 20px;color: #ffffff;"
+                        nzTheme="outline"></i>
+                    </div>
+                  </div>
+                  <div class="palette_port palette_port_output" style="top: 15px;"></div>
+                  <div class="palette_port palette_port_input" style="top: 15px;"></div>
+                </div>
+
+                <!-- <div id="palette_node_function" class="palette_node ui-draggable"
+                  style="background-color: #2db7f5; height: 40px;">
+                  <div class="palette_label" dir="">function</div>
+                  <div class="palette_icon_container">
+                    <div class="palette_icon">
+                      <i nz-icon nzType="alert" style="margin-top: 10px;" nzTheme="outline"></i>
+                    </div>
+                  </div>
+                  <div class="palette_port palette_port_output" style="top: 15px;"></div>
+                  <div class="palette_port palette_port_input" style="top: 15px;"></div>
+                </div> -->
+              </nz-collapse-panel>
+              <nz-collapse-panel [nzHeader]="'动作'">
+                <div id="palette_node_function" class="palette_node ui-draggable"
+                  style="background-color: rgb(253, 208, 162); height: 40px;">
+                  <div class="palette_label" dir="">function</div>
+                  <div class="palette_icon_container">
+                    <div class="palette_icon">
+                      <i nz-icon nzType="alert" style="margin-top: 10px;" nzTheme="outline"></i>
+                    </div>
+                  </div>
+                  <div class="palette_port palette_port_output" style="top: 15px;"></div>
+                  <div class="palette_port palette_port_input" style="top: 15px;"></div>
+                </div>
+
+                <div id="palette_node_function" class="palette_node ui-draggable"
+                  style="background-color: rgb(253, 208, 162); height: 40px;">
+                  <div class="palette_label" dir="">function</div>
+                  <div class="palette_icon_container">
+                    <div class="palette_icon">
+                      <i nz-icon nzType="alert" style="margin-top: 10px;" nzTheme="outline"></i>
+                    </div>
+                  </div>
+                  <div class="palette_port palette_port_output" style="top: 15px;"></div>
+                  <div class="palette_port palette_port_input" style="top: 15px;"></div>
+                </div>
+
+                <div id="palette_node_function" class="palette_node ui-draggable"
+                  style="background-color: rgb(253, 208, 162); height: 40px;">
+                  <div class="palette_label" dir="">function</div>
+                  <div class="palette_icon_container">
+                    <div class="palette_icon">
+                      <i nz-icon nzType="alert" style="margin-top: 10px;" nzTheme="outline"></i>
+                    </div>
+                  </div>
+                  <div class="palette_port palette_port_output" style="top: 15px;"></div>
+                  <div class="palette_port palette_port_input" style="top: 15px;"></div>
+                </div>
+              </nz-collapse-panel>
+              <nz-collapse-panel [nzHeader]="'属性'">
+                <p>content</p>
+              </nz-collapse-panel>
+              <nz-collapse-panel [nzHeader]="'消息'">
+                <p>content</p>
+              </nz-collapse-panel>
+            </nz-collapse>
+          </nz-row>
+        </nz-card>
+      </nz-col>
+      <nz-col nzSpan="20" class="flowchart-content">
+        <nz-card style="height: 600px">
+          <nz-row class="flowchart-content-header">流程操作区</nz-row>
+          <div nz-row style="overflow: auto;height: 564px;" id="flow-panel" (cdkDropListDropped)="drop($event)"
+            cdkDropList #doneList="cdkDropList" [cdkDropListConnectedTo]="[todoList]">
+            <div id="01_node_function" class="palette_node ui-draggable"
+              style="position: absolute; margin: 0px;background-color: #00d084; height: 40px; top:200px;left:167px">
+              <div class="palette_label">开始</div>
+              <div class="palette_icon_container">
+                <div class="palette_icon">
+                  <i nz-icon nzType="right-circle" style="margin-top: 10px;font-size: 20px;color: #ffffff;"
+                    nzTheme="outline"></i>
+                </div>
+              </div>
+            </div>
+
+            <div id="02_node_function" class="palette_node ui-draggable"
+              style="position: absolute;margin: 0px; background-color: #d00000; height: 40px; top:216px;left:940px">
+              <div class="palette_label">结束</div>
+              <div class="palette_icon_container">
+                <div class="palette_icon">
+                  <i nz-icon nzType="right-circle" style="margin-top: 10px;font-size: 20px;color: #ffffff;"
+                    nzTheme="outline"></i>
+                </div>
+              </div>
+            </div>
+
+            <div id="{{item.uid}}" class="palette_node ui-draggable" *ngFor="let item of nodeList"
+              [ngStyle]="{'background-color': item.color,'top':item.currentY,'left':item.currentX}"
+              style="position: absolute;margin: 0px; height: 40px;">
+              <div class="palette_label" dir="">{{item.text}}</div>
+              <div class="palette_icon_container">
+                <div class="palette_icon">
+                  <i nz-icon nzType="{{item.iconType}}" style="margin-top: 10px;font-size: 20px;color: #ffffff;"
+                    nzTheme="outline"></i>
+                </div>
+              </div>
+            </div>
+
+            <svg width="5000" height="5000" pointer-events="all" style="cursor: crosshair;">
+            </svg>
+          </div>
+        </nz-card>
+      </nz-col>
+    </nz-row>
+  </nz-col>
+</nz-row>

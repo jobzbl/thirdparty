@@ -1,0 +1,97 @@
+::ng-deep body {
+  overflow: hidden !important;
+}
+
+.ngx-flowchart {
+  margin-top: 12px;
+
+  ::ng-deep .ant-card-body {
+    padding: 0px !important;
+  }
+
+  .flowchart-sider-header,
+  .flowchart-content-header {
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    text-align: center;
+    height: 35px;
+    padding: 3px;
+    border-bottom: 1px solid #bbb;
+    box-sizing: border-box;
+  }
+
+  .flowchart-content {
+    padding-left: 0px !important;
+  }
+
+  ::ng-deep .ant-collapse-content>.ant-collapse-content-box {
+    padding: 0px;
+  }
+}
+
+.palette_node {
+  display: block;
+  cursor: move;
+  background: #ddd;
+  margin: 10px auto;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid #999;
+  background-position: 5% 50%;
+  background-repeat: no-repeat;
+  width: 175px;
+  background-size: contain;
+  position: relative;
+}
+
+.palette_label {
+  font-size: 13px;
+  margin: 4px 0 4px 32px;
+  line-height: 30px;
+  overflow: hidden;
+  text-align: center;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.palette_icon_container {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.palette_icon {
+  display: inline-block;
+  width: 20px;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.palette_port {
+  position: absolute;
+  top: 8px;
+  left: -5px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  background: #d9d9d9;
+  border-radius: 3px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid #999;
+}
+
+.palette_port_output {
+  left: auto;
+  right: -6px;
+}
