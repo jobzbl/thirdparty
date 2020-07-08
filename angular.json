@@ -36,6 +36,7 @@
               "src/styles.less"
             ],
             "scripts": [
+              "node_modules/jsplumb/dist/js/jsplumb.js"
             ]
           },
           "configurations": {
