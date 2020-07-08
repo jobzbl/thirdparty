@@ -13,7 +13,7 @@ const routes: Routes = [
   },
   {
     path: 'ag-grid',
-    loadChildren: './views/ag-grid/ag-grid.module#AgGridModule',
+    loadChildren: './views/ag-grid/ag-grid.module#AgGridFileModule',
   },
 ];
 

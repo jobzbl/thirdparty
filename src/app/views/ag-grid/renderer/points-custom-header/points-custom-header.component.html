@@ -1,0 +1,16 @@
+<div style="overflow:hidden" (click)="onSortRequested(params)">
+  <div class="customHeaderLabel">{{params.displayName}}</div>
+  <!-- <div *ngIf="params.enableSorting" (click)="onSortRequested('asc', $event)"
+  [ngClass]="ascSort" class="customSortDownLabel"><i nz-icon nzType="down" nzTheme="outline"></i></div>
+  <div *ngIf="params.enableSorting" (click)="onSortRequested('desc', $event)"
+  [ngClass]="descSort" class="customSortUpLabel"><i nz-icon nzType="up" nzTheme="outline"></i></div> -->
+  <!-- <bi-icon *ngIf="sortType === 'asc'" iconName="arrow-up" style="color: #0452e1;"></bi-icon>
+      <bi-icon *ngIf="sortType === 'desc'" iconName="arrow-down" style="color: #0452e1;"></bi-icon> -->
+  <div *ngIf="params.enableSorting" [ngClass]="noSort" class="customSortRemoveLabel">
+    <i nz-icon *ngIf="sortType === 'asc'" nzType="arrow-up" nzTheme="outline"></i>
+    <i nz-icon *ngIf="sortType === 'desc'" nzType="arrow-down" nzTheme="outline"></i>
+    <!-- <bi-icon *ngIf="sortType === 'asc'" iconName="arrow-up" style="color: #0452e1;"></bi-icon> -->
+    <!-- <bi-icon *ngIf="sortType === 'desc'" iconName="arrow-down" style="color: #0452e1;"></bi-icon> -->
+    <i  *ngIf="sortType === null" nz-icon nzType="minus" nzTheme="outline"></i>
+  </div>
+</div>

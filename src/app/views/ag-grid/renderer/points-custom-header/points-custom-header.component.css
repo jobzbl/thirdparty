@@ -1,0 +1,25 @@
+.customHeaderMenuButton {
+  float: left;
+}
+
+.customHeaderLabel {
+  float: left;
+}
+
+.customSortDownLabel {
+  float: left;
+}
+
+.customSortUpLabel {
+  float: left;
+}
+
+.customSortRemoveLabel {
+  float: left;
+  font-size: 11px;
+  margin-left: 5px;
+}
+
+.active {
+  color: cornflowerblue;
+}

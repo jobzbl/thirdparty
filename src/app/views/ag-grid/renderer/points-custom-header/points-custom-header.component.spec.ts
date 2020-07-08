@@ -2,21 +2,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-import { AgAgridZorroTableComponent } from './ag-agrid-zorro-table.component';
 
-describe('AgAgridZorroTableComponent', () => {
-  let component: AgAgridZorroTableComponent;
-  let fixture: ComponentFixture<AgAgridZorroTableComponent>;
+import { PointsCustomHeaderComponent } from './points-custom-header.component';
+
+describe('PointsCustomHeaderComponent', () => {
+  let component: PointsCustomHeaderComponent;
+  let fixture: ComponentFixture<PointsCustomHeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AgAgridZorroTableComponent ]
+      declarations: [ PointsCustomHeaderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AgAgridZorroTableComponent);
+    fixture = TestBed.createComponent(PointsCustomHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,3 +1,36 @@
-<p>
-  ag-agrid-zorro-table works!
-</p>
+<div class="wrap">
+  <div class="set-table-header" nz-dropdown nzTrigger="click" [nzClickHide]="false" [nzDropdownMenu]="menu">
+    <i nz-icon nzType="setting" nzTheme="outline"></i>
+  </div>
+  <nz-dropdown-menu #menu="nzDropdownMenu">
+    <div nz-menu style="padding:20px">
+      <!-- <div style="margin-bottom: 10px;">
+        <label nz-checkbox [(ngModel)]="allChecked" (ngModelChange)="updateAllChecked()" [nzIndeterminate]="indeterminate">
+          全选
+        </label>
+      </div> -->
+      <nz-checkbox-group class="select-tab-tit" [(ngModel)]="checkOptionsOne" (ngModelChange)="updateSingleChecked()">
+      </nz-checkbox-group>
+    </div>
+  </nz-dropdown-menu>
+  <ag-grid-angular id="myGrid" #agGrid style="width: 100%; height:calc(100vh - 350px);" class="ag-theme-balham"
+    [columnDefs]="columnDefs"
+    [rowData]="data"
+    [enableColResize]="true"
+    [suppressRowTransform]="false"
+    rowBuffer="10"
+    [rowHeight]="54"
+    [enableSorting]='true'
+    [headerHeight]='52'
+    [rowClassRules]="rowClassRules"
+    [suppressScrollOnNewData]="true"
+    (gridReady)="onGridReady($event)"
+    overlayLoadingTemplate="加载中"
+    [overlayNoRowsTemplate]="overlayNoRowsTemplate"
+    [frameworkComponents]="frameworkComponents"
+  >
+  <!-- [enableSorting]='true' -->
+  <!-- [defaultColDef]="defaultColDef " -->
+  </ag-grid-angular>
+</div>
+

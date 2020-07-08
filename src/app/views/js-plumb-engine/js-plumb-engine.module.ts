@@ -5,6 +5,7 @@ import { PlumbComponent } from './plumb/plumb.component';
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { DndModule } from 'ngx-drag-drop';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   ],
   imports: [
     CommonModule,
+    AgGridModule.withComponents([]),
     JsPlumbEngineRoutingModule,
     NgZorroAntdModule,
     DndModule,

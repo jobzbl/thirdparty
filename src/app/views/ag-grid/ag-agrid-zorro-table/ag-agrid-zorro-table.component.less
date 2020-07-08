@@ -1,0 +1,107 @@
+// 根绝zorro表格风格 修改ag-grid样式
+ag-grid-angular::ng-deep .ag-header-cell::after{
+  margin-top: 0;
+  height: 52px;
+  border-right: 1px solid rgba(189,195,199,.5);
+  content: " ";
+  // height: 16px;
+  // margin-top: 8px;
+  position: absolute;
+  right: 0;
+  text-indent: -2000px;
+  top: 0;
+  // #fafafa
+}
+ag-grid-angular::ng-deep  .ag-header-cell{
+  line-height: 52px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+ag-grid-angular::ng-deep .ag-header{
+  background-color:#fafafa;
+  z-index: 999;
+  overflow: hidden;
+}
+ag-grid-angular::ng-deep .ag-root{
+  border: none;
+}
+.ag-theme-balham{
+  // border: none;
+  // border-width:0;
+}
+ag-grid-angular::ng-deep .ag-row:not(.ag-row-first){
+  border-width:0;
+}
+ag-grid-angular::ng-deep .ag-row{
+  height: 54px;
+}
+ag-grid-angular::ng-deep .ag-cell{
+  height: 54px;
+  line-height: 54px;
+  background-color: #fff;
+  color: rgba(0,0,0,.65);
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+ag-grid-angular::ng-deep .ag-ltr .ag-cell-focus{
+  // outline: none;
+  // border: none;
+  // padding: 1px 11px 1px 12px;
+}
+ag-grid-angular::ng-deep .ag-ltr .ag-cell-last-left-pinned{
+  border-right: 1px solid #BDC3C7 !important;
+}
+ag-grid-angular::ng-deep .ag-ltr .ag-cell-first-right-pinned{
+  border-left: 1px solid #BDC3C7 !important;
+  padding: 0 11px;
+}
+ag-grid-angular::ng-deep .ag-cell span{
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding:0 11px;
+}
+
+// 修改固定列的阴影
+
+ag-grid-angular::ng-deep .ag-pinned-left-cols-container{
+  z-index: 99;
+  box-shadow: 4px -4px 14px 0px rgb(189, 186, 186)
+}
+ag-grid-angular::ng-deep .ag-pinned-left-header{
+  box-shadow: 4px 1px 14px 0px rgb(189, 186, 186);
+  border-right:1px solid #BDC3C7 !important
+}
+ag-grid-angular::ng-deep .ag-pinned-right-header{
+  box-shadow: -4px -4px 14px 0px rgb(189, 186, 186);
+  border-left:1px solid #BDC3C7 !important
+}
+
+ag-grid-angular::ng-deep .ag-pinned-right-cols-container{
+  z-index: 99;
+  box-shadow: -4px -4px 14px 0px rgb(189, 186, 186)
+}
+.wrap{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+.select-tab-tit{
+  ::ng-deep.ant-checkbox-group-item{
+    display: block;
+    margin-bottom: 5px;
+  }
+}
+.set-table-header{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+  height: 52px;
+  line-height: 52px;
+  text-align: center;
+  width: 52px;
+  background-color: rgb(250,250,250);
+  border-left: 1px solid rgba(189, 195, 199, 0.5);
+}
