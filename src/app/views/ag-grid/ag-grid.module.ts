@@ -6,7 +6,7 @@ import { AgAgridZorroTableComponent } from './ag-agrid-zorro-table/ag-agrid-zorr
 import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
 import { PointsCustomHeaderComponent } from './renderer/points-custom-header/points-custom-header.component';
-import { TableDetailsTextComponent } from './renderer/table-details-text.component';
+import { TableDetailsTextComponent } from './renderer/table-details-text/table-details-text.component';
 
 @NgModule({
   declarations: [

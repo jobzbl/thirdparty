@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { cloneDeep, isNumber, assign } from 'lodash';
 import { AgGridService } from '../../service/ag-grid.service';
 import { PointsCustomHeaderComponent } from '../renderer/points-custom-header/points-custom-header.component';
-import { TableDetailsTextComponent } from '../renderer/table-details-text.component';
+import { TableDetailsTextComponent } from '../renderer/table-details-text/table-details-text.component';
+// import { TableDetailsTextComponent } from '../renderer/table-details-text.component';
 // import '@ag-grid-community/all-modules/dist/styles/ag-grid.css';
 @Component({
   selector: 'app-ag-agrid-zorro-table',
