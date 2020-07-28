@@ -7,6 +7,8 @@ import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { FormsModule } from '@angular/forms';
 import { PointsCustomHeaderComponent } from './renderer/points-custom-header/points-custom-header.component';
 import { TableDetailsTextComponent } from './renderer/table-details-text/table-details-text.component';
+import { DndModule } from 'ngx-drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { TableDetailsTextComponent } from './renderer/table-details-text/table-d
     AgGridRoutingModule,
     AgGridModule.withComponents([]),
     NgZorroAntdModule,
-    FormsModule
+    FormsModule,
+    DndModule,
+    DragDropModule
   ],
   entryComponents: [
     PointsCustomHeaderComponent,

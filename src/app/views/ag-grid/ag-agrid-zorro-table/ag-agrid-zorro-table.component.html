@@ -3,9 +3,24 @@
     <i nz-icon nzType="setting" nzTheme="outline"></i>
   </div>
   <nz-dropdown-menu #menu="nzDropdownMenu">
-    <div nz-menu style="padding:20px">
-      <nz-checkbox-group class="select-tab-tit" [(ngModel)]="checkOptionsOne" (ngModelChange)="updateSingleChecked()">
+    <!-- <div nz-menu style="padding:20px" cdkDropList (cdkDropListDropped)="drop($event)">
+      <nz-checkbox-group class="select-tab-tit" cdkDrag [(ngModel)]="checkOptionsOne" (ngModelChange)="updateSingleChecked()">
       </nz-checkbox-group>
+    </div> -->
+    <div nz-menu style="padding:20px" class="setColBox" cdkDropList (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let item of checkOptionsOne" cdkDrag class="set-col-style" (click)="updateSingleChecked(item)">
+        <nz-row nzGutter="24">
+          <nz-col nzSpan="4">
+            <i nz-icon nzType="unordered-list" nzTheme="outline" style="margin-right:10px"></i>
+          </nz-col>
+          <nz-col nzSpan="20">
+            <span>{{item.label}}</span>
+            <span style="float:right" *ngIf="item.checked">
+              <i nz-icon nzType="check" nzTheme="outline"></i>
+            </span>
+          </nz-col>
+        </nz-row>
+      </div>
     </div>
   </nz-dropdown-menu>
   <ag-grid-angular id="myGrid" #agGrid style="width: 100%; height:calc(100vh - 350px);" class="ag-theme-balham"

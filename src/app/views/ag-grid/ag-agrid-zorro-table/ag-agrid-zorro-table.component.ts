@@ -6,6 +6,7 @@ import { PointsCustomHeaderComponent } from '../renderer/points-custom-header/po
 import { TableDetailsTextComponent } from '../renderer/table-details-text/table-details-text.component';
 // import { TableDetailsTextComponent } from '../renderer/table-details-text.component';
 // import '@ag-grid-community/all-modules/dist/styles/ag-grid.css';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-ag-agrid-zorro-table',
   templateUrl: './ag-agrid-zorro-table.component.html',
@@ -72,7 +73,8 @@ export class AgAgridZorroTableComponent implements OnInit {
     });
   }
 
-  updateSingleChecked(): void {
+  updateSingleChecked(data): void {
+    data.checked = !data.checked;
     this.columnDefs = [];
     this.checkOptionsOne.map(data => {
       if (data.checked) {
@@ -99,5 +101,8 @@ export class AgAgridZorroTableComponent implements OnInit {
     setTimeout(() => {
       this.gridApi.sizeColumnsToFit();
     });
+  }
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.checkOptionsOne, event.previousIndex, event.currentIndex);
   }
 }
