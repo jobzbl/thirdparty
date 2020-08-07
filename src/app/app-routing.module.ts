@@ -15,6 +15,15 @@ const routes: Routes = [
     path: 'ag-grid',
     loadChildren: './views/ag-grid/ag-grid.module#AgGridFileModule',
   },
+  {
+    path: 'active-reports',
+    loadChildren: './views/active-reports-test/active-reports-test.module#ActiveReportsTestModule',
+  },
+  {
+    path: 'sprad-js',
+    loadChildren: './views/sprad-js/sprad-js.module#SpradJsModule',
+    // component: SpradJsModule,
+  },
 ];
 
 @NgModule({
