@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { WeChatRadPacketModule } from './views/we-chat-rad-packet/we-chat-rad-packet.module';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
     loadChildren: './views/sprad-js/sprad-js.module#SpradJsModule',
     // component: SpradJsModule,
   },
+  {
+    path: 'we-chat',
+    loadChildren: './views/we-chat-rad-packet/we-chat-rad-packet.module#WeChatRadPacketModule',
+  }
 ];
 
 @NgModule({

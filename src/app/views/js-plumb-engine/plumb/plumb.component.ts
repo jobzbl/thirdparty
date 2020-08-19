@@ -28,7 +28,7 @@ export interface CdkDragNode {
 @Component({
   selector: 'app-plumb',
   templateUrl: './plumb.component.html',
-  styleUrls: ['./plumb.component.css']
+  styleUrls: ['./plumb.component.less']
 })
 export class PlumbComponent implements OnInit, AfterViewInit {
   title = 'ngx-flowchart-master';

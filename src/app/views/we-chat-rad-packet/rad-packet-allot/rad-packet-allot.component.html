@@ -1,0 +1,23 @@
+<nz-row nzGutter="24">
+  <nz-col nzSpan="2" style="text-align: right;">
+    红包个数：
+  </nz-col>
+  <nz-col nzSpan="5">
+    <input type="text" nz-input style="width:80%" [(ngModel)]="number">
+  </nz-col>
+  <nz-col nzSpan="2" style="text-align: right;">
+    红包金额：
+  </nz-col>
+  <nz-col nzSpan="5">
+    <input type="text" nz-input style="width:80%" [(ngModel)]="money">
+  </nz-col>
+  <nz-col nzSpan="4">
+    <button nz-button nzType="primary" (click)="shengcheng($event)">生成</button>
+  </nz-col>
+</nz-row>
+<div *ngFor="let item of redArr">
+  <nz-row nzGutter="8">
+    <nz-col nzSpan="4">{{item.sum}}{{item.zuijia?'最佳':''}}</nz-col>
+    <nz-col nzSpan="4">*****</nz-col>
+  </nz-row>
+</div>
