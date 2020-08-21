@@ -7,7 +7,9 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dom2hmr": "ng serve --project=subpool -c=hmr",
+    "build-subpool": "npm run xng --build --prod --project=subpool -c=rel"
   },
   "private": true,
   "dependencies": {

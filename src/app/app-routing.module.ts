@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { WeChatRadPacketModule } from './views/we-chat-rad-packet/we-chat-rad-packet.module';
+import { RoutesModule } from 'projects/subpool/src/app/views/routes/routes.module';
 
 const routes: Routes = [
   {
@@ -28,11 +29,18 @@ const routes: Routes = [
   {
     path: 'we-chat',
     loadChildren: './views/we-chat-rad-packet/we-chat-rad-packet.module#WeChatRadPacketModule',
+  },
+  {
+    path: 'sub-module',
+    loadChildren: '../../projects/subpool/src/app/views/routes/routes.module#RoutesModule',
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    RoutesModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

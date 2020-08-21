@@ -135,10 +135,14 @@
     },
     "subpool": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        }
+      },
       "root": "projects/subpool",
       "sourceRoot": "projects/subpool/src",
-      "prefix": "app",
+      "prefix": "subm",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
