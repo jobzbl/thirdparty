@@ -1,0 +1,3 @@
+[submodule "projects/subpool"]
+	path = projects/subpool
+	url = https://github.com/jobzbl/subpool.git
