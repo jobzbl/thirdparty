@@ -37,7 +37,8 @@
               "node_modules/@grapecity/spread-sheets/styles/gc.spread.sheets.excel2016darkGray.css"
             ],
             "scripts": [
-              "node_modules/jsplumb/dist/js/jsplumb.js"
+              "node_modules/jsplumb/dist/js/jsplumb.js",
+              "node_modules/zrender/dist/zrender.js"
             ]
           },
           "configurations": {

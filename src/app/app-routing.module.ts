@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { WeChatRadPacketModule } from './views/we-chat-rad-packet/we-chat-rad-packet.module';
 import { RoutesModule } from 'projects/subpool/src/app/views/routes/routes.module';
+import { ZrenderComModule } from './views/zrender-com/zrender-com.module';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'sub-module',
     loadChildren: '../../projects/subpool/src/app/views/routes/routes.module#RoutesModule',
+  },
+  {
+    path: 'zrender',
+    loadChildren: './views/zrender-com/zrender-com.module#ZrenderComModule',
   }
 ];
 
