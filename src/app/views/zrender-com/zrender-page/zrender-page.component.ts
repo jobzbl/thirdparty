@@ -17,10 +17,18 @@ export class ZrenderPageComponent implements OnInit {
   firstC;
   secondC;
   firstL;
-  graphArr = [];
-  line = [];
+  graphArr = []; // 拖拽元素数组
+  line = []; // 连接线数组
+  ngOnInit() {
+    console.log(zrender);
+    const that = this;
+    this.zr = zrender.init(document.getElementById('main'), {renderer: 'svg'});
+    console.log(this.zrenderServiceService.data);
+    this.zrenderServiceService.data.forEach((data, index) => {
+      this.createRelation(data, index);
+    });
+  }
   createRelation(data, index, child?) {
-    console.log(data);
     this.graphArr.unshift(
       new zrender.Circle({
         shape: {
@@ -46,7 +54,7 @@ export class ZrenderPageComponent implements OnInit {
           startX = x.shape.cx;
           startY = x.shape.cy;
         }
-        if (x.style.id === data.id) { // 父元素
+        if (x.style.id === data.id) { // 子元素
           targetX = x.shape.cx;
           targetY = x.shape.cy;
         }
@@ -72,7 +80,7 @@ export class ZrenderPageComponent implements OnInit {
   ondrag(params, direction) {
     const nowPint = this.graphArr.filter(x => x.style.id === direction.id)[0];
     const nowLine = this.line.filter(x => x.style.id === direction.id)[0];
-    if (direction.pointTo.length > 0) {
+    if (direction.pointTo.length > 0) { // 如果为起点
       this.line.forEach(x => {
         x.setShape({
           x1: nowPint.shape.cx + nowPint.position[0],
@@ -86,66 +94,7 @@ export class ZrenderPageComponent implements OnInit {
       });
     }
   }
-  ngOnInit() {
-    console.log(zrender);
-    const that = this;
-    this.zr = zrender.init(document.getElementById('main'));
-    console.log(this.zrenderServiceService.data);
-    this.zrenderServiceService.data.forEach((data, index) => {
-      this.createRelation(data, index);
-    });
-    // 生成圆
-    // this.firstC = new zrender.Circle({
-    //   shape: {
-    //       cx: 30, // x轴位置
-    //       cy: 30, // y轴位置
-    //       r: 30 // 半径
-    //   },
-    //   style: {
-    //       text: '第一个圆',
-    //       fill: 'rgb(204,221,255)', // 填充颜色
-    //       stroke: '#000' // 边框
-    //   },
-    //   draggable: true, // 图形可拖拽
-    //   remock: '123',
-    //   ondrag: (params) => {this.ondrag(params, 'start'); } // 拖拽事件
 
-    // });
-    // this.zr.add(this.firstC); // 将图形添加到页面元素中
-
-    // this.secondC = new zrender.Circle({
-    //   shape: {
-    //       cx: 300, // x轴位置
-    //       cy: 327, // y轴位置
-    //       r: 30 // 半径
-    //   },
-    //   style: {
-    //       text: '第二个圆',
-    //       fill: 'rgb(204,221,255)', // 填充颜色
-    //       stroke: '#000' // 边框
-    //   },
-    //   draggable: true, // 图形可拖拽
-    //   ondrag: (params) => {this.ondrag(params, 'end'); } // 拖拽事件
-    // });
-    // this.zr.add(this.secondC); // 将图形添加到页面元素中
-
-    // this.firstL = new zrender.Line({
-    //   shape: {
-    //     x1: 30,
-    //     y1: 30,
-    //     x2: 300,
-    //     y2: 327
-    //   },
-    //   style: {
-    //     text: '这是一条线',
-    //     lineWidth: 1, // 线宽
-    //     // fill: '#010640', // 填充颜色
-    //     stroke: '#000' // 边框
-    //   },
-    // });
-    // this.zr.add(this.firstL); // 将图形添加到页面元素中
-
-  }
   dispose() { // 销毁
     zrender.dispose(this.zr);
   }
@@ -162,8 +111,7 @@ export class ZrenderPageComponent implements OnInit {
     // this.firstC.animators[0].start(); // 开始动画
   }
   free() {
-    this.secondC.setShape.cx = 0;
-    console.log(this.graphArr[0].shape);
+    console.log(this.graphArr);
   }
 
   ondragstart(params) {

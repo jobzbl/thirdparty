@@ -11,6 +11,7 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { DndModule } from 'ngx-drag-drop';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile/ng-zorro-antd-mobile.module';
 
 registerLocaleData(zh);
 
@@ -26,7 +27,8 @@ registerLocaleData(zh);
       HttpClientModule,
       BrowserAnimationsModule,
       DndModule,
-      DragDropModule
+      DragDropModule,
+      NgZorroAntdMobileModule
    ],
    providers: [],
    bootstrap: [
