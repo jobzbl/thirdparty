@@ -1,0 +1,9 @@
+<!-- <div (touchmove)="touchstart($event)" style="position: relative;top: 0;left: 0;height: 100%;width: 100%;"> -->
+<nz-spin [nzSpinning]="loding" [nzDelay]="0">
+  <div class="echarts" echarts [options]='chartOption3' (chartInit)="onChartInit($event)"></div>
+</nz-spin>
+
+{{loding}}
+<span>{{load}}</span>
+<!-- <div (click)="expression()">点击增加x</div> -->
+

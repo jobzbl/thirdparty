@@ -11,8 +11,7 @@ import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { DndModule } from 'ngx-drag-drop';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile/ng-zorro-antd-mobile.module';
-
+import { NgxEchartsModule } from 'ngx-echarts';
 registerLocaleData(zh);
 
 @NgModule({
@@ -28,7 +27,9 @@ registerLocaleData(zh);
       BrowserAnimationsModule,
       DndModule,
       DragDropModule,
-      NgZorroAntdMobileModule
+      NgxEchartsModule.forRoot({
+        echarts: () => import('echarts'),
+      }),
    ],
    providers: [],
    bootstrap: [

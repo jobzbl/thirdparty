@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { WeChatRadPacketModule } from './views/we-chat-rad-packet/we-chat-rad-packet.module';
 import { RoutesModule } from 'projects/subpool/src/app/views/routes/routes.module';
-import { ZrenderComModule } from './views/zrender-com/zrender-com.module';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { TouchModule } from './views/touch/touch.module';
 
 const routes: Routes = [
   {
@@ -38,13 +38,22 @@ const routes: Routes = [
   {
     path: 'zrender',
     loadChildren: './views/zrender-com/zrender-com.module#ZrenderComModule',
+  },
+  {
+    path: 'echarts',
+    loadChildren: './views/echarts-com/echarts-com.module#EchartsComModule'
+  },
+  {
+    path: 'touch',
+    loadChildren: './views/touch/touch.module#TouchModule',
   }
 ];
 
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
-    RoutesModule
+    RoutesModule,
+    NgxEchartsModule
   ],
   exports: [RouterModule]
 })
