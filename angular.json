@@ -33,8 +33,7 @@
               }
             ],
             "styles": [
-              "src/styles.less",
-              "node_modules/@grapecity/spread-sheets/styles/gc.spread.sheets.excel2016darkGray.css"
+              "src/styles.less"
             ],
             "scripts": [
               "node_modules/jsplumb/dist/js/jsplumb.js",

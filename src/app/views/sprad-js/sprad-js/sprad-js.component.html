@@ -1,10 +1,53 @@
-<div style="width:1000px;margin:0 auto">
-  <gc-spread-sheets [backColor]="spreadBackColor" [hostStyle]="hostStyle" (workbookInitialized)="workbookInit($event)">
-    <gc-worksheet [name]="sheetName" [dataSource]="data">
-         <gc-column dataField="Name" width=300></gc-column>
-         <gc-column dataField="Category" [width]=columnWidth></gc-column>
-         <gc-column dataField="Price" [width]=columnWidth formatter="$ #.00"></gc-column>
-         <gc-column dataField="Shopping Place" [width]=columnWidth></gc-column>
+<div style="width:100%;height:100%;" (click)="onClick($event)">
+  <app-sheet-header [spread]="spread"></app-sheet-header>
+  <gc-spread-sheets [hostStyle]="hostStyle" (workbookInitialized)="initSpread($event)">
+    <gc-worksheet name="测试" [dataSource]="dataSource" [autoGenerateColumns]='autoGenerateColumns'>
+        <gc-column dataField="Film" width=160></gc-column>
+        <gc-column dataField="Genre" width=70></gc-column>
+        <gc-column dataField="Lead Studio" width=90></gc-column>
+        <gc-column dataField="Audience Score %" width=110></gc-column>
+        <gc-column dataField="Profitability" width=80></gc-column>
+        <gc-column dataField="Rating"></gc-column>
+        <gc-column dataField="Worldwide Gross" width=110></gc-column>
+        <gc-column dataField="Year"></gc-column>
     </gc-worksheet>
   </gc-spread-sheets>
 </div>
+<!-- <div class="options-container">
+  <div class="option-row">
+      <label>更改主题:</label>
+      <select id="spreadThemes" (change)="applyTheme($event)">
+          <optgroup label="SpreadJS">
+              <option value="gc.spread.sheets.css">SpreadJS</option>
+          </optgroup>
+          <optgroup label="Excel2013">
+              <option value="gc.spread.sheets.excel2013white.css" selected>White</option>
+              <option value="gc.spread.sheets.excel2013lightGray.css">Light Gray</option>
+              <option value="gc.spread.sheets.excel2013darkGray.css">Dark Gray</option>
+          </optgroup>
+          <optgroup label="Excel2016">
+              <option value="gc.spread.sheets.excel2016colorful.css">Colorful</option>
+              <option value="gc.spread.sheets.excel2016darkGray.css">Dark Gray</option>
+              <option value="gc.spread.sheets.excel2016black.css">Black</option>
+          </optgroup>
+      </select>
+  </div>
+</div>
+<div class="options-container">
+  <div class="demo-options">
+      <label>Select a block of cells and then click one of the buttons below.</label>
+      <div class="option-row">
+          <input type="button" value="Merge Cells" title="Merge cells in selected range to one cell" id="btnMerge" (click)="btnMerge($event)" />
+          <input type="button" value="Unmerge Cells" title="Unmerge cells in selected range back to all in a single cell" id="btnUnMerge" (click)="btnUnMerge($event)" />
+      </div>
+  </div>
+  <div class="demo-options" style="padding-top: 16px">
+      <label>Check the option below to turn drag merge on and off.</label>
+      <div class="option-row">
+          <label>
+              <input type="checkbox" id="allowDragMerge" (change)="allowDragMerge($event)">
+              Allow Drag Merge
+          </label>
+      </div>
+  </div>
+</div> -->

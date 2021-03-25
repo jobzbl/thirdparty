@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { RoutesModule } from 'projects/subpool/src/app/views/routes/routes.module';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { TouchModule } from './views/touch/touch.module';
+import { Le5leModule } from './views/le5le/le5le.module';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: 'touch',
     loadChildren: './views/touch/touch.module#TouchModule',
+  },
+  {
+    path: 'le5le',
+    loadChildren: './views/le5le/le5le.module#Le5leModule'
   }
 ];
 

@@ -1,0 +1,29 @@
+<ul class="big-box">
+  <li title="合并单元格" (click)="mergeCells()">
+    <i class="iconfont icon-hebing"></i>
+  </li>
+  <li title="拆分单元格" (click)="splitCells()">
+    <i class="iconfont icon-771bianjiqi_chaifendanyuange"></i>
+  </li>
+  <li title="合并单元格">
+    <label style="vertical-align: middle;" nz-checkbox (ngModelChange)="mergeChange($event)" [(ngModel)]="allowDragMerge">拖动合并</label>
+  </li>
+  <li class="interval"></li>
+  <li title="选择主题" nz-popover nzPopoverTrigger="click"
+  [nzPopoverContent]="contentTemplate">
+    <span style="vertical-align: middle;">选择主题</span>
+    <i nz-icon style="font-size: 10px;color:#464646" nzType="caret-down" nzTheme="outline"></i>
+  </li>
+  <li class="interval"></li>
+  <li title="导出pdf" (click)="exportPDF()">
+    <i class="iconfont icon-PDF"></i>
+  </li>
+  <li title="导出Excel" (click)="exportExcel()">
+    <i class="iconfont icon-excel"></i>
+  </li>
+</ul>
+<ng-template #contentTemplate>
+  <ul class="theme-box">
+    <li *ngFor="let item of theme" (click)="selTheme(item.value)">{{item.name}}</li>
+  </ul>
+</ng-template>
